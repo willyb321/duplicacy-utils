@@ -13,11 +13,11 @@
 
 # ================================================
 # Full path to the repository
-$repositoryFolder = "C:/duplicacy repo/"
+$repositoryFolder = "E:/TAFE/"
 
 # ================================================
 # Full path to Duplicacy exe
-$duplicacyExePath = ".\z.exe"
+$duplicacyExePath = "C:\Users\willb\go\bin\duplicacy.EXE"
 
 # ================================================
 # Should the "-d" flag (debuging) be used? (hint: it generally shouldn't)

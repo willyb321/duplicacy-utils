@@ -102,7 +102,7 @@ function doPreBackupTasks()
         New-Item -ItemType directory -Path $log.workingPath
         log "Folder ${log.workingPath} does not exist. It has just been created"
     }
-
+    New-BurntToastNotification -Text "Backup from SSD => NAS Starting", 'Check back in a few.'
     logStartBackupProcess
     zipOlderLogFiles
 }
@@ -140,6 +140,7 @@ function zipOlderLogFiles()
 function doPostBackupTasks()
 {
     logFinishBackupProcess
+    New-BurntToastNotification -Text "Backup from SSD => NAS Complete", 'Check it.'
     Pop-Location
 }
 
@@ -161,7 +162,7 @@ function doDuplicacyCommand($arg)
 {
     $command = $duplicacy.command + $arg
     log "==="
-    log "=== Now executting $command"
+    log "=== Now executing $command"
     log "==="
     invoke $command
 }

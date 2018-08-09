@@ -10,14 +10,14 @@
 # Backup script full path
 #   Recommendation: please place all the util scrips in
 #       [duplicacy repo path]\.duplicacy\duplicacy utils (eg. relative to the repository)
-$scriptPath = "C:\duplicacy repo\.duplicacy\duplicacy utils\backup.ps1"
+$scriptPath = "E:\TAFE\.duplicacy\duplicacy-utils\backup.ps1"
 
 
 # ================================================
 # The name of the Scheduled Task
 #   Recommendation: please use unique names for each different task (backup prune, etc.),
 #       as tasks which already exist WILL BE REPLACED!
-$taskName = "Duplicacy Hourly Backup"
+$taskName = "Duplicacy Daily Backup"
 
 
 # ================================================
@@ -32,7 +32,7 @@ $taskName = "Duplicacy Hourly Backup"
 # $repetitionInterval = (New-TimeSpan -Days 1)
 #
 # copy repetition interval below:
-$repetitionInterval = (New-TimeSpan -Hours 1)
+$repetitionInterval = (New-TimeSpan -Days 1)
 
 # ==============================================================================
 # ==============================================================================
