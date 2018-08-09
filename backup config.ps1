@@ -3,6 +3,11 @@
 #
 # User-configurable file. Please don't modify anything else!
 #
+# Note: by default, these scripts assume that they are located in the path relative
+#   to duplicacy repository: "<duplicacy repo>/.duplicacy/duplicacy-utils/".
+# - If that is true, then $repositoryFolder needs not be changed.
+# - If that is not true (these scrips are in another folder) then you need to
+#   fill the FULL path to the repository folder.
 #
 # Please ensure that all folder paths have a "/" at the end
 # Please give full paths wherever a path is needed.
@@ -15,13 +20,14 @@
 # Full path to the repository
 $repositoryFolder = "E:/TAFE/"
 
+
 # ================================================
 # Full path to Duplicacy exe
 $duplicacyExePath = "C:\Users\willb\go\bin\duplicacy.EXE"
 
 # ================================================
 # Should the "-d" flag (debuging) be used? (hint: it generally shouldn't)
-$duplicacyDebug = $false        # or $true
+$duplicacyDebug = $true        # or $false
 
 # ================================================
 # Should the "-vss" flag be used for backup? (hint: better not use it as it may create problems)
@@ -41,3 +47,9 @@ $duplicacyBackupNumberOfThreads = 18
 #
 # Note: the order has to be from the eldest to the youngest! (hence 30 comes before 7)
 $duplicacyPruneRetentionPolicy = "-keep 7:30 -keep 1:7"
+# $duplicacyPruneRetentionPolicy = "-keep 0:90 -keep 7:30 -keep 1:7"
+
+#=================================================
+# Duplicacy should use prune from 1 computer, with -all (as to take all repositories)
+# if the retetion policies are the same for all repositories
+$duplicacyPruneAll = $true
